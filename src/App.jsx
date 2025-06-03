@@ -1,17 +1,20 @@
-// src/App.jsx
-import { BrowserRouter } from 'react-router-dom'; // Importando BrowserRouter
-import Navbar from './components/Navbar';  // Importando a Navbar
-import AppRoutes from './routes/AppRoutes';  // Importando as rotas da aplicação
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar'; // importar seu Navbar existente
+import Home from './pages/Home';
 import Detalhes from './pages/Detalhes';
+import Favoritos from './pages/Favoritos';
 
-
-function App() {
+const App = () => {
   return (
-    <BrowserRouter> {/* Envolvendo a aplicação com o BrowserRouter */}
-      <Navbar />  {/* Navbar vai aparecer em todas as páginas */}
-      <AppRoutes />  {/* As rotas da aplicação */}
-    </BrowserRouter>
+    <>
+      <Navbar />  {/* Aqui */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/detalhes/:id" element={<Detalhes />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

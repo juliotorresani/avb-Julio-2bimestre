@@ -25,13 +25,6 @@ const Detalhes = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-200 via-purple-200 to-indigo-200 p-8 flex justify-center items-center">
       <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 flex flex-col items-center">
-        <button
-          onClick={() => navigate(-1)}
-          className="self-start mb-6 px-4 py-2 rounded-full bg-purple-500 text-white font-semibold hover:bg-purple-600 transition"
-        >
-          &larr; Voltar
-        </button>
-
         <img
           src={user.picture.large}
           alt={`${user.name.first} ${user.name.last}`}
